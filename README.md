@@ -1,5 +1,8 @@
 # Front Matter
 
+[![Build Status](https://travis-ci.org/bulldogcreative/front-matter.svg?branch=master)](https://travis-ci.org/bulldogcreative/front-matter)
+[![Coverage Status](https://coveralls.io/repos/github/bulldogcreative/front-matter/badge.svg?branch=master)](https://coveralls.io/github/bulldogcreative/front-matter?branch=master)
+
 This uses [Parsedown](http://parsedown.org/) and 
 [Symfony/Yaml](https://symfony.com/doc/current/components/yaml.html).
 
