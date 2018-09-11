@@ -1,0 +1,21 @@
+{
+    "name": "bulldog/front-matter",
+    "description": "YAMl/Markdown",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Levi Durfee",
+            "email": "levi.durfee@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Bulldog\\": "src/"
+        }
+    },
+    "require": {
+        "erusev/parsedown": "^1.7",
+        "symfony/yaml": "^4.1"
+    }
+}
