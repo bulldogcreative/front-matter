@@ -1,6 +1,7 @@
 {
     "name": "bulldog/front-matter",
-    "description": "YAMl/Markdown",
+    "description": "YAML/Markdown",
+    "keywords": ["yaml", "markdown", "front-matter", "front-matter-parser"],
     "type": "library",
     "license": "MIT",
     "authors": [

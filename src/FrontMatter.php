@@ -17,7 +17,7 @@ class FrontMatter
 
         $stuff = preg_match("/---\s(.*?)\s---/", $fileContent, $matches);
 
-        if(!isset($matches[1])) {
+        if (!isset($matches[1])) {
             throw new \Exception('Invalid File Format');
         }
 
@@ -46,7 +46,7 @@ class FrontMatter
     {
         $data = "";
         $arrayContent = explode("\n", $content);
-        for($i=$begins;$i<count($arrayContent);$i++) {
+        for ($i=$begins;$i<count($arrayContent);$i++) {
             $data .= $this->parsedown->text($arrayContent[$i]);
         }
         return $data;
@@ -57,11 +57,11 @@ class FrontMatter
         $i = 0;
         $x = 0;
         $lines = explode("\n", $content);
-        foreach($lines as $line) {
-            if(strcmp($line, "---")) {
+        foreach ($lines as $line) {
+            if (strcmp($line, "---")) {
                 $x++;
             }
-            if($x == 2) {
+            if ($x == 2) {
                 break;
             }
             $i++;
@@ -69,5 +69,4 @@ class FrontMatter
 
         return $i + 1;
     }
-
 }
