@@ -17,6 +17,10 @@ class FrontMatterTests extends TestCase
         $this->assertEquals($fm->html(), '<h1>Hello World</h1><p>It is i, levi.</p><p><a href="https://google.com">test</a></p>');
     }
 
+    /**
+     * @expectedException Exception
+     * @expectedExceptionMessage Invalid File Format
+     */
     public function testBadYaml()
     {
         $fm = FrontMatter::load('tests/bad.yaml');

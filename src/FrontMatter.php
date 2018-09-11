@@ -8,35 +8,40 @@ class FrontMatter
 {
     private $parsedown;
     private $config;
-    
+
     private function __construct($file)
     {
         $this->parsedown = new \Parsedown;
-        
+
         $fileContent = file_get_contents($file);
-        
+
         $stuff = preg_match("/---\s(.*?)\s---/", $fileContent, $matches);
+
+        if(!isset($matches[1])) {
+            throw new \Exception('Invalid File Format');
+        }
+
         $this->config = Yaml::parse($matches[1]);
-        
+
         $markdownBegins = $this->getWhereMarkdownBegins($fileContent);
         $this->html = $this->getMarkdown($fileContent, $markdownBegins);
     }
-    
+
     public static function load($file)
     {
         return new FrontMatter($file);
     }
-    
+
     public function config()
     {
         return $this->config;
     }
-    
+
     public function html()
     {
         return $this->html;
     }
-    
+
     private function getMarkdown($content, $begins)
     {
         $data = "";
@@ -46,7 +51,7 @@ class FrontMatter
         }
         return $data;
     }
-    
+
     private function getWhereMarkdownBegins($content)
     {
         $i = 0;
@@ -62,5 +67,5 @@ class FrontMatter
             $i++;
         }
     }
-    
+
 }
