@@ -62,10 +62,12 @@ class FrontMatter
                 $x++;
             }
             if($x == 2) {
-                return $i + 1;
+                break;
             }
             $i++;
         }
+
+        return $i + 1;
     }
 
 }
